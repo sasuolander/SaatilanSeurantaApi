@@ -1,0 +1,87 @@
+package saa.tila.api.object;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
+public class Station {
+    @Id
+    private Long Id;
+    private String Name;
+    private double PositionX;
+    private double PositionY;
+
+    @OneToMany(cascade=CascadeType.ALL,mappedBy="Id_Station")
+    private List<Measurement> Measurements;
+
+    public Station(Long id, String name, double positionX, double positionY, ArrayList<Measurement> measurements) {
+        Id = id;
+        Name = name;
+        PositionX = positionX;
+        PositionY = positionY;
+        Measurements = measurements;
+    }
+
+
+    public Station(Long id, String name, double positionX, double positionY) {
+        Id = id;
+        Name = name;
+        PositionX = positionX;
+        PositionY = positionY;
+    }
+
+    public Station() {
+        Id = null;
+        Name = null;
+        PositionX = 0;
+        PositionY = 0;
+        Measurements = null;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public double getPositionX() {
+        return PositionX;
+    }
+
+    public void setPositionX(double positionX) {
+        this.PositionX = positionX;
+    }
+
+    public double getPositionY() {
+        return PositionY;
+    }
+
+    public void setPositionY(double positionY) {
+        PositionY = positionY;
+    }
+
+    public List<Measurement> getMeasurements() {
+        return Measurements;
+    }
+
+    public void setMeasurements(ArrayList<Measurement> measurements) {
+        Measurements = measurements;
+    }
+}
