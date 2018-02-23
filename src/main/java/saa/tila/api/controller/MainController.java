@@ -8,6 +8,7 @@ import saa.tila.api.object.MeasurementRepository;
 import saa.tila.api.object.Station;
 import saa.tila.api.object.StationRepository;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -19,12 +20,12 @@ public class MainController {
     private StationRepository SR;
 
     @RequestMapping(value = "Measurement", method = RequestMethod.POST)
-    public String save(@RequestBody Measurement measurement){
+    public @ResponseBody String save(@RequestBody Measurement measurement){
         MR.save(measurement);
         return "It works";
     }
     //delete
-    @RequestMapping(value = "Measurement/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "Measurement/{id}",  method = RequestMethod.DELETE)
     public String delete(@PathVariable(value="id") Long id){
         MR.delete(id);
         return null;

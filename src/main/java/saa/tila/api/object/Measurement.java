@@ -1,10 +1,16 @@
 package saa.tila.api.object;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import  saa.tila.api.object.CustomDateFormater;
+
 @Entity
 public class Measurement {
     @Id
@@ -12,6 +18,7 @@ public class Measurement {
     private Long Id;
 
     private  Long Id_Station;
+
     private Date Time;
     private double Value;
 
@@ -49,7 +56,8 @@ public class Measurement {
     public void setId(Long id) {
         Id = id;
     }
-
+    //@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonDeserialize(using=CustomDateFormater.class)
     public Date getTime() {
         return Time;
     }
