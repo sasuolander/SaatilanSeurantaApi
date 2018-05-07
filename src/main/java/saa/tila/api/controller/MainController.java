@@ -28,7 +28,8 @@ public class MainController {
         return MR.findAll();
     }
 
-    @RequestMapping(value = "Measurement/{id}", method = RequestMethod.DELETE)
+    //@CrossOrigin(origins = "http://localhost:8080")
+    @RequestMapping(value = "Measurement/{id}", method = RequestMethod.POST)
     public String delete(@PathVariable(value = "id") Long id) {
         MR.delete(id);
         return "It works";
