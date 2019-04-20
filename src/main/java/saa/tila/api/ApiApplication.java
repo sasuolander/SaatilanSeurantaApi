@@ -8,7 +8,6 @@ import saa.tila.api.object.Measurement;
 import saa.tila.api.object.MeasurementRepository;
 import saa.tila.api.object.Station;
 import saa.tila.api.object.StationRepository;
-
 import java.text.SimpleDateFormat;
 
 @SpringBootApplication
@@ -31,16 +30,8 @@ public class ApiApplication {
             Measurement testi3 = new Measurement(3L, 3L, formater.parse("2017-06-02 08:07:41"), 5.6);
             Measurement testi4 = new Measurement(4L, 4L, formater.parse("2017-06-02 08:07:41"), 5.8);
             Measurement testi5 = new Measurement(5L, 5L, formater.parse("2017-06-02 08:07:41"), 5.7);
-            SR.save(Tokyo);
-            SR.save(Helsinki);
-            SR.save(New_York);
-            SR.save(Amsterdam);
-            SR.save(Dubai);
-            MR.save(testi1);
-            MR.save(testi2);
-            MR.save(testi3);
-            MR.save(testi4);
-            MR.save(testi5);
+            SR.save(Tokyo);SR.save(Helsinki);SR.save(New_York);SR.save(Amsterdam);SR.save(Dubai);MR.save(testi1);
+            MR.save(testi2);MR.save(testi3);MR.save(testi4);MR.save(testi5);
         };
     }
 }
