@@ -9,6 +9,8 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger.web.UiConfiguration;
+import springfox.documentation.swagger.web.UiConfigurationBuilder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
@@ -29,4 +31,12 @@ public class MyConfiguration {
                 .apis(RequestHandlerSelectors.basePackage("saa.tila.api.controller")) //endpoints
                 .paths(PathSelectors.any()).build();
     }
+
+//    @Bean
+//    public UiConfiguration uiConfiguration() {
+//        return UiConfigurationBuilder.builder()
+//                .deepLinking(true)
+//                .validatorUrl(null)
+//                .build();
+//    }
 }
