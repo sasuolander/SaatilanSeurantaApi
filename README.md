@@ -8,5 +8,3 @@ FullStack app, Spring boot and React.js
  mvn spring-boot:run
 
  App is in 127.0.0.1:8080
- 
- Swagger doc is in 127.0.0.1:8080/doc
