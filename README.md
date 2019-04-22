@@ -1,4 +1,4 @@
-# SaatilanSeurantaApi
+# SaatilanSeuranta
 FullStack app, Spring boot and React.js
 
  git clone https://github.com/sasuolander/SaatilanSeurantaApi.git
