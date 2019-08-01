@@ -1,2 +1,0 @@
-# SaatilanSeuranta
-Technologies: React.js
