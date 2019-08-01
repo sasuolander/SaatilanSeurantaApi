@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React,{ Component } from "react";
 import "react-dropdown/style.css";
 import axios from "axios";
 
@@ -24,16 +23,11 @@ export default class Add_measurement extends Component {
   };
 
   createObject = () => {
-    const { Id_Station1, Value1, Time1 } = this.state,
-      date = this.format_date(new Date()),
-      integer = 1,Id = 0,
-      Id_Station = Id_Station1 === null ? Id_Station1 : integer,
-      Value = Value1,
-      Time = Time1 === null ? Time1 : date;
+    const { Id_Station, Value, Time } = this.state;
     const object = {
-      id: Id,
-      id_Station: Id_Station,
-      time: Time,
+      id: 0,
+      id_Station: Id_Station === null ? Id_Station : 1,
+      time: Time === null ? Time : this.format_date(new Date()),
       value: Value
     };
     return object;
@@ -51,17 +45,14 @@ export default class Add_measurement extends Component {
         console.log(error);
       });
   };
-  format_date = date => {
-    const year = date.getFullYear(),
-      monthIndex = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2),
-      hour = date.getHours(),
-      minute = date.getMinutes(),
-      second = date.getSeconds();
+  format_date = (date) => {
     return (
-      year +"-" +
-      monthIndex +"-" +
-      day + " " +hour +":" +minute +":" +second
+      date.getFullYear() +
+      "-" +("0" + (date.getMonth() + 1)).slice(-2) +
+      "-" +("0" + date.getDate()).slice(-2) + 
+      " " +date.getHours() +
+      ":" +date.getMinutes() +
+      ":" +date.getSeconds()
     );
   };
   render() {

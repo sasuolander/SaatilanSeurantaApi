@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React,{ Component } from "react";
 import { Measurement } from "./Measurement";
 import axios from "axios";
 export default class MeasurementList extends Component {
@@ -15,15 +14,13 @@ export default class MeasurementList extends Component {
   }
 
   format_date = date => {
-    const year = date.getFullYear(),
-      monthIndex = ("0" + (date.getMonth() + 1)).slice(-2),
-      day = ("0" + date.getDate()).slice(-2),
-      hour = date.getHours(),
-      minute = date.getMinutes(),
-      second = date.getSeconds();
-    return (year + "-" +monthIndex + 
-      "-" +day +" " +hour +
-      ":" +minute +":" +second
+    return (
+      date.getFullYear() + 
+      "-" +("0" + (date.getMonth() + 1)).slice(-2)+ 
+      "-" +("0" + date.getDate()).slice(-2) +
+      " " +date.getHours() +
+      ":" +date.getMinutes()+
+      ":" +date.getSeconds()
     );
   };
 

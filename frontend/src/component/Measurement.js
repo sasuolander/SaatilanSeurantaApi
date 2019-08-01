@@ -27,20 +27,19 @@ export const Measurement = ({
         </form>
       </td>
       <td>
-        <button
-          className={"button is-danger"}
-          onClick={() => deleteMeasurement(measurement.id)}
-        >
-          DELETE
-        </button>
-      </td>
-      <td>
-        <button
+      <button
           type="submit"
           className={"button is-danger"}
           onClick={() => changeMeasurement(measurement.id)}
         >
           Change
+        </button>
+      </td>
+      <td>
+      <button
+          className={"button is-danger"}
+          onClick={() => deleteMeasurement(measurement.id)}>
+          DELETE
         </button>
       </td>
     </tr>

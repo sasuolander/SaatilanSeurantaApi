@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React,{ Component } from "react";
 import { Station } from "./Station";
 import axios from "axios";
 
